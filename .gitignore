@@ -1,0 +1,9 @@
+/build/*.class
+/build/common/*.class
+/build/instruction/*.class
+/build/instruction/factory/*.class
+/build/instruction/instructionImpl/*.class
+/build/movingStrategy/*.class
+/build/movingStrategy/startegyImpl/*.class
+/build/plateau/*.class
+/build/rover/*.class

@@ -1,0 +1,38 @@
+<project name="MY_APP" default="compile" basedir=".">
+  
+  <property name="build"   value="build" />
+
+  <!-- CLEAN -->
+  <target name="clean">
+    <echo message="Removing old directory structure..." />
+    <delete dir="${build}" />   
+  </target> 
+  
+  <target name="compile" depends="clean">
+    <echo message="Compiling MY APP ..." />
+	<mkdir dir="${build}"/>
+    <javac  srcdir="${basedir}/src" destdir="${build}" />
+     <delete dir="dist" />
+	 <mkdir dir="dist"/>
+	<jar destfile="dist/rover.jar"  basedir="${build}"/>
+  </target> 
+
+ 
+  <target name="run">
+    <java classname="TestRover">
+         <arg value="-h"/>
+         <classpath>
+           <pathelement location="dist/rover.jar"/>         
+         </classpath>
+       </java>
+  </target> 
+
+   <target name="run1">
+    <java classname="TestRover1">
+         <arg value="-h"/>
+         <classpath>
+           <pathelement location="dist/rover.jar"/>         
+         </classpath>
+       </java>
+  </target> 
+</project>
